@@ -35,6 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Hamburger menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinksContainer = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('active');
+    });
+
+    // Close menu when a nav item is clicked (mobile UX)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinksContainer.classList.remove('active');
+        });
+    });
+
     // Show the default section on page load (the one without the 'hidden' class initially)
     const defaultSection = document.querySelector('.content-section:not(.hidden)');
     if (defaultSection) {
@@ -50,10 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillCards = document.querySelectorAll('.skill-card');
     skillCards.forEach(card => {
         card.addEventListener('click', (event) => {
-            // event.stopPropagation(); // Prevent event bubbling
-            // Toggle flipped state
-            card.classList.toggle('flipped');
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
         });
     });
+
+    
 
 });

@@ -54,7 +54,7 @@ body {
     font-family: 'Press Start 2P', cursive; /* Pixel font for title */
     font-size: 2.2em; /* Adjust font size */
     margin: 0 0 5px 0;
-    color: #9090B0; /* Light Blue color for title (Midnight Minimal) */
+    color: #A9A9CB; /* Light Blue color for title (Midnight Minimal) */
     text-shadow: 2px 2px #1F1F4D; /* Medium Blue text shadow (Midnight Minimal) */
     word-wrap: break-word; /* Prevent long names from overflowing */
 }
@@ -106,10 +106,19 @@ body {
     margin: 30px 0; /* Space above and below */
 }
 
-/* Navigation Styling */
+/* === Mobile Nav Toggle === */
+.nav-toggle {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
+    text-align: right;
+}
+  
+/* Default nav layout (desktop) */
 .site-nav {
-    width: 100%; /* Take full width of header */
-    margin-top: 0; /* Remove top margin */
+    position: relative;
 }
 
 .site-nav ul {
@@ -128,6 +137,18 @@ body {
 .site-nav li {
     margin: 5px 15px;
 }
+  
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin: 0;
+    background-color: #1F1F4D;
+    border: 2px solid #9090B0;
+    box-shadow: 0 0 8px #1F1F4D;
+ }
 
 .nav-link {
     text-decoration: none;
@@ -302,7 +323,7 @@ body {
 .experience-item .work-points {
     margin: 0;
     padding-left: 25px;
-    color: #9090B0; /* Color for work points (from user snippet) */
+    color: #A9A9CB; /* Color for work points (from user snippet) */
 }
 
 .experience-item .work-points li {
@@ -347,7 +368,6 @@ body {
     flex-shrink: 0; /* Prevent icon from shrinking */
     /* Optional: Adjust margin or padding for the link itself */
 }
-
 
 .project-item .github-icon {
     width: 24px; /* Set the width of the icon */
@@ -416,12 +436,17 @@ body {
     margin-bottom: 10px; /* Ensure bottom margin */
 }
 
+.project-item .project-points, 
+.project-item .project-description {
+    color: #A9A9CB
+}
+
 
 /* Styling for Course Items */
 .course-item {
     margin-bottom: 30px;
     padding: 20px;
-    border: 1px solid #9090B0; /* Light Blue border (Midnight Minimal) */
+    border: 1px solid #A9A9CB; /* Light Blue border (Midnight Minimal) */
     background-color: #1F1F4D; /* Medium Blue background (Midnight Minimal) */
     box-shadow: 0 0 5px rgba(144, 144, 176, 0.5); /* Subtle Light Blue glow (Midnight Minimal) */
 }
@@ -465,7 +490,7 @@ body {
 .course-item .course-points {
     margin: 0;
     padding-left: 25px;
-    color: #9090B0; /* White for points (Midnight Minimal) */
+    color: #A9A9CB; /* White for points (Midnight Minimal) */
 }
 
 .course-item .course-points li {
@@ -688,7 +713,7 @@ body {
 .education-item .edu-points {
     margin: 0;
     padding-left: 25px;
-    color: #9090B0; /* White for points (Midnight Minimal) */
+    color: #A9A9CB; /* White for points (Midnight Minimal) */
 }
 
 .education-item .edu-points li {
@@ -781,7 +806,7 @@ body {
     .separation-line {
         margin: 20px 0;
     }
-    
+
     .site-nav ul {
         padding: 8px 0;
     }
@@ -790,11 +815,30 @@ body {
         margin: 2px 6px;
     }
 
+    .nav-toggle {
+        display: block;
+        text-align: right;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        background-color: #1F1F4D;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 10px 0;
+    }
+    
     .nav-link {
-        font-size: 0.85em;
-        padding: 3px 6px;
-        word-break: keep-all;
-        white-space: nowrap; 
+        font-size: 1em;
+        padding: 6px 12px;
     }
 
     .site-content {
